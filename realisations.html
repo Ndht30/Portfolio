@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Réalisations – Nathan Duhaut</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container" style="padding:40px 20px; max-width:1000px;">
+    <header class="header" style="margin-bottom:40px; text-align:center; border-bottom:3px solid var(--color-primary); padding-bottom:20px;">
+        <h1 style="font-size:2.3em; color:var(--color-primary);">Mes réalisations</h1>
+        <p style="color:var(--color-text-light); max-width:600px; margin:10px auto 0;">
+            Sélection de projets réalisés au cours de mon BUT Informatique (développement, bases de données, gestion de projet).
+        </p>
+    </header>
+
+    <section class="projects-grid" style="display:grid; grid-template-columns:1fr; gap:30px;">
+        <!-- Carte 1 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3>Jeu Pokémon TCG en Java</h3>
+                <p style="font-size:0.9em; opacity:0.9;">Projet académique – BUT1</p>
+            </div>
+            <div class="project-body">
+                <p class="project-desc">
+                    Conception et implémentation d’un jeu de cartes à collectionner en Java, en respectant les principes de la POO et une modélisation UML complète.
+                </p>
+                <div class="tech-tags" style="margin-bottom:15px;">
+                    <span class="tech-tag">Java</span>
+                    <span class="tech-tag">POO</span>
+                    <span class="tech-tag">UML</span>
+                    <span class="tech-tag">Git</span>
+                </div>
+                <a href="projet-pokemon-tcg.html" class="btn btn-primary">Voir le détail du projet</a>
+            </div>
+        </article>
+
+        <!-- Carte 2 -->
+        <article class="project-card">
+            <div class="project-header">
+                <h3>SAE Bases de Données – Cinémas</h3>
+                <p style="font-size:0.9em; opacity:0.9;">Projet interdisciplinaire – BUT1/2</p>
+            </div>
+            <div class="project-body">
+                <p class="project-desc">
+                    Conception d’une base de données relationnelle pour la gestion de cinémas, films et réservations, à partir de fichiers CSV réels, avec requêtes SQL avancées.
+                </p>
+                <div class="tech-tags" style="margin-bottom:15px;">
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">MySQL</span>
+                    <span class="tech-tag">Modélisation</span>
+                    <span class="tech-tag">PHP</span>
+                </div>
+                <a href="projet-bdd-cinemas.html" class="btn btn-primary">Voir le détail du projet</a>
+            </div>
+        </article>
+    </section>
+
+    <div class="nav-buttons" style="margin-top:30px; border-top:1px solid var(--color-border); padding-top:20px; display:flex; justify-content:space-between;">
+        <a href="index.html" class="btn btn-secondary">Retour à l’accueil</a>
+        <a href="#top" class="btn btn-primary" onclick="window.scrollTo({top:0, behavior:'smooth'}); return false;">Haut de la page</a>
+    </div>
+</div>
+</body>
+</html>

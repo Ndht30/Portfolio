@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAE Bases de Données – Réalisation</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<div class="container" style="padding:40px 20px; max-width:1000px;">
+    <header class="header" style="margin-bottom:40px; border-bottom:3px solid var(--color-primary); padding-bottom:20px;">
+        <h1 style="font-size:2.1em; color:var(--color-primary);">SAE Bases de Données – Cinémas</h1>
+        <p style="color:var(--color-text-light); max-width:650px; margin-top:10px;">
+            Projet de conception et d’implémentation d’une base de données relationnelle pour la gestion de cinémas, films, séances et réservations.
+        </p>
+    </header>
+
+    <article class="project-card">
+        <div class="project-header">
+            <h3>Détails du projet</h3>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Contexte :</span><span>SAE Bases de Données / Développement</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Durée :</span><span>6 à 8 semaines</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Format :</span><span>Équipe de 3–4 étudiants</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <!-- Contexte -->
+            <section class="project-section">
+                <h3 class="section-title">Contexte du projet</h3>
+                <div class="section-content">
+                    <p>
+                        À partir de fichiers CSV fournis (cinémas, films, séances, réservations), l’objectif était
+                        de concevoir une base de données normalisée, puis de l’exploiter via des requêtes SQL et une interface web.
+                    </p>
+                    <ul>
+                        <li>Analyse des données sources et identification des entités et relations.</li>
+                        <li>Conception d’un modèle Entité/Association puis traduction en schéma relationnel.</li>
+                        <li>Normalisation jusqu’en 3ème forme normale pour éviter les redondances.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Méthodes et résultats -->
+            <section class="project-section">
+                <h3 class="section-title">Méthodes de travail et résultats</h3>
+                <div class="section-content">
+                    <p><strong>Démarche :</strong></p>
+                    <ul>
+                        <li>Modélisation E/A complète (cinéma, salle, film, séance, réservation, client, etc.).</li>
+                        <li>Création du schéma SQL (tables, clés primaires/étrangères, contraintes d’intégrité).</li>
+                        <li>Import des données CSV et nettoyage des incohérences.</li>
+                        <li>Écriture de requêtes SQL avancées pour produire des rapports (taux d’occupation, films les plus projetés, etc.).</li>
+                        <li>Mise en place d’une interface PHP simple pour interroger la base.</li>
+                    </ul>
+
+                    <div class="evidence-box">
+                        <strong>Exemples de requêtes :</strong>
+                        <ul>
+                            <li>Liste des films projetés dans un cinéma donné sur une période.</li>
+                            <li>Calcul du taux de remplissage moyen des séances par cinéma.</li>
+                            <li>Recherches par genre, durée ou langue du film.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compétences -->
+            <section class="project-section">
+                <h3 class="section-title">Compétences travaillées</h3>
+                <div class="section-content">
+                    <p><strong>Techniques :</strong></p>
+                    <div class="competency-list">
+                        <span class="competency-tag technical">Modélisation E/A</span>
+                        <span class="competency-tag technical">Normalisation (3FN)</span>
+                        <span class="competency-tag technical">SQL avancé</span>
+                        <span class="competency-tag technical">MySQL / PostgreSQL</span>
+                        <span class="competency-tag technical">Requêtes avec jointures</span>
+                        <span class="competency-tag technical">PHP et accès BD</span>
+                    </div>
+
+                    <p style="margin-top:18px;"><strong>Humaines :</strong></p>
+                    <div class="competency-list">
+                        <span class="competency-tag human">Travail en équipe</span>
+                        <span class="competency-tag human">Répartition des rôles</span>
+                        <span class="competency-tag human">Rigueur dans la gestion des données</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contribution -->
+            <section class="project-section">
+                <h3 class="section-title">Ma contribution personnelle</h3>
+                <div class="section-content">
+                    <ul>
+                        <li>Analyse des fichiers CSV et définition des entités et relations principales.</li>
+                        <li>Participation à la conception du modèle E/A et au passage en schéma relationnel.</li>
+                        <li>Écriture d’un ensemble de requêtes SQL pour les rapports et indicateurs.</li>
+                        <li>Implémentation de certaines pages PHP d’interrogation de la base.</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <div class="nav-buttons">
+        <a href="realisations.html" class="btn btn-secondary">Retour aux réalisations</a>
+        <a href="index.html" class="btn btn-primary">Retour à l’accueil</a>
+    </div>
+</div>
+</body>
+</html>

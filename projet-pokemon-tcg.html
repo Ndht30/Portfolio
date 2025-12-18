@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Jeu Pokémon TCG – Réalisation</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/project-pages.css">
 </head>
 <body>
-<div class="container" style="padding:40px 20px; max-width:1000px;">
-    <header class="header" style="margin-bottom:40px; border-bottom:3px solid var(--color-primary); padding-bottom:20px;">
-        <h1 style="font-size:2.1em; color:var(--color-primary);">Jeu Pokémon TCG en Java</h1>
-        <p style="color:var(--color-text-light); max-width:650px; margin-top:10px;">
-            Projet académique de 1ère année de BUT Informatique, centré sur la programmation orientée objet et la modélisation UML.
+<div class="container project-container">
+    <header class="header project-header-main">
+        <h1 class="project-title">Pokémon TCG – Interface Graphique JavaFX</h1>
+        <p class="project-intro">
+            Projet académique du 2ème semestre de 1ère année de BUT Informatique (SAE S2.01 Phase 2), centré sur le développement d'une interface graphique moderne avec JavaFX et les pattern de conception.
         </p>
     </header>
 
@@ -20,10 +22,10 @@
             <h3>Détails du projet</h3>
             <div class="project-meta">
                 <div class="meta-item">
-                    <span class="meta-label">Contexte :</span><span>Projet pédagogique BUT1</span>
+                    <span class="meta-label">Contexte :</span><span>SAE S2.01 Phase 2 – BUT1 Informatique</span>
                 </div>
                 <div class="meta-item">
-                    <span class="meta-label">Durée :</span><span>4 à 5 semaines</span>
+                    <span class="meta-label">Période :</span><span>21 mai – 13 juin 2025</span>
                 </div>
                 <div class="meta-item">
                     <span class="meta-label">Format :</span><span>Travail en équipe (2–3 personnes)</span>
@@ -32,81 +34,152 @@
         </div>
 
         <div class="project-body">
-            <!-- Contexte -->
+            <!-- Contexte - Résumé + Image -->
             <section class="project-section">
-                <h3 class="section-title">Contexte du projet</h3>
-                <div class="section-content">
-                    <p>
-                        L’objectif était de développer un jeu de cartes à collectionner inspiré de Pokémon TCG en Java,
-                        en appliquant les principes de la POO (encapsulation, héritage, polymorphisme) et en partant d’une modélisation UML.
-                    </p>
-                    <ul>
-                        <li>Commande académique dans le cadre d’une SAE de programmation orientée objet.</li>
-                        <li>Production attendue : application jouable en console avec gestion de decks et de combats.</li>
-                        <li>Contraintes : structure orientée objet claire, classes cohérentes, code documenté.</li>
-                    </ul>
+                <h3 class="section-title">🎮 Le Projet</h3>
+                <div class="section-grid-two">
+                    <div class="section-content">
+                        <p>
+                            Ce projet universitaire constitue la Phase 2 d'une SAE (Situation
+                            d'Apprentissage et Évaluation) visant à développer une interface
+                            graphique JavaFX complète pour un jeu de cartes à collectionner inspiré
+                            de Pokémon TCG. Après avoir implémenté la mécanique du jeu en Phase 1,
+                            l'objectif ici est de créer une IHM intuitive et réactive.
+                        </p>
+                        <p class="paragraph-muted">
+                            Contraintes principales : la logique du jeu est fournie en tant que
+                            module encapsulé et immuable. Le véritable défi académique réside dans
+                            l'isolement de l'interface via le pattern Façade, la mise en place de
+                            bindings réactifs et la gestion efficace des événements utilisateur en
+                            JavaFX. Cela demande une bonne compréhension de l'architecture logicielle
+                            et du design orienté objet.
+                        </p>
+                    </div>
+                    <div class="screenshot-placeholder">
+                        <p class="screenshot-text">
+                            📸 Insérer image de gameplay ici<br/>
+                            <code>ressources/gameplay_1.png</code>
+                        </p>
+                    </div>
                 </div>
             </section>
 
-            <!-- Méthodes et résultats -->
+            <!-- Architecture - Tableau simplifié -->
             <section class="project-section">
-                <h3 class="section-title">Méthodes de travail et résultats</h3>
+                <h3 class="section-title">🏗️ Architecture</h3>
                 <div class="section-content">
-                    <p><strong>Organisation et approche :</strong></p>
-                    <ul>
-                        <li>Réalisation d’un diagramme de classes UML avant toute implémentation.</li>
-                        <li>Utilisation de Git pour le suivi des versions et la répartition des tâches.</li>
-                        <li>Découpage en modules : gestion des cartes, gestion des decks, moteur de combat.</li>
-                    </ul>
+                    <p class="paragraph-spaced">
+                        Trois couches modulaires isolées par des interfaces Façades :
+                    </p>
 
-                    <div class="evidence-box">
-                        <strong>Fonctionnalités principales :</strong>
+                    <div class="architecture-box">
+                        <table class="architecture-table">
+                            <tr>
+                                <td>Couche</td>
+                                <td>Contenu</td>
+                                <td>État</td>
+                            </tr>
+                            <tr>
+                                <td><code>mécanique</code></td>
+                                <td>Logique du jeu (encapsulée)</td>
+                                <td><span class="badge badge-accent">Read-only</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>Interfaces</code></td>
+                                <td>IJeu, IJoueur, IPokemon, ICarte</td>
+                                <td><span class="badge badge-success">Façades</span></td>
+                            </tr>
+                            <tr>
+                                <td><code>vues</code></td>
+                                <td>Classes Vue + FXML</td>
+                                <td><span class="badge badge-info">À développer</span></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Composants - Cards compacts -->
+            <section class="project-section">
+                <h3 class="section-title">🖥️ Composants IHM</h3>
+                <div class="ihm-grid">
+                    <div class="ihm-card ihm-card-main">
+                        <h4>VueDuJeu</h4>
+                        <p>Vue principale intégrant tous les composants</p>
+                    </div>
+                    <div class="ihm-card ihm-card-accent">
+                        <h4>VueJoueurActif</h4>
+                        <p>Main, deck, banc Pokémon</p>
+                    </div>
+                    <div class="ihm-card ihm-card-success">
+                        <h4>VuePokemon</h4>
+                        <p>PV, attaques, talents</p>
+                    </div>
+                    <div class="ihm-card ihm-card-alt">
+                        <h4>VueAdversaire</h4>
+                        <p>Informations masquées</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Points clés - Infographie simple -->
+            <section class="project-section">
+                <h3 class="section-title">⚡ Points Clés</h3>
+                <div class="section-grid-two">
+                    <div class="highlight-block highlight-primary">
+                        <h4>Concepts Appliqués</h4>
                         <ul>
-                            <li>Classes de>Carte</code>, de>CartePokemon</code>, de>Deck</code>, de>Joueur</code>.</li>
-                            <li>Système de points de vie, attaques et calcul de dégâts.</li>
-                            <li>Gestion d’un deck de cartes, tirage, main du joueur.</li>
-                            <li>Interface en ligne de commande avec menus de choix.</li>
+                            <li>Pattern Façade</li>
+                            <li>MVC + FXML</li>
+                            <li>Bindings JavaFX</li>
+                            <li>Event Handling</li>
                         </ul>
                     </div>
+                    <div class="highlight-block highlight-accent">
+                        <h4>Technologies</h4>
+                        <ul>
+                            <li>Java 11+ & JavaFX</li>
+                            <li>FXML / CSS</li>
+                            <li>Git & GitLab</li>
+                            <li>Composition UI</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
 
-                    <p style="margin-top:15px;">
-                        Le livrable final est un jeu jouable en console, accompagné d’une Javadoc et de quelques tests unitaires JUnit.
+            <!-- Ma contribution - Résumé compact -->
+            <section class="project-section">
+                <h3 class="section-title">👨‍💻 Ma Contribution</h3>
+                <div class="section-content">
+                    <div class="contrib-box">
+                        <div class="contrib-item">
+                            <p class="contrib-title">Implémentation</p>
+                            <p class="contrib-text">VueDuJeu, VuePokemon, système de bindings</p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Architecture</p>
+                            <p class="contrib-text">Gestion des références, listeners d'état</p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">UX/UI</p>
+                            <p class="contrib-text">Stylisation CSS, responsive design</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Défis et Bilan -->
+            <section class="project-section">
+                <h3 class="section-title">🚀 Résumé</h3>
+                <div class="section-content">
+                    <p>
+                        Projet pivotal dans ma formation : isoler une interface d'une logique complexe via des contrats (interfaces),
+                        puis synchroniser l'IHM avec un modèle réactif. Le pattern Façade a consolidé ma compréhension de
+                        l'encapsulation et des architectures modulaires.
                     </p>
-                </div>
-            </section>
-
-            <!-- Compétences -->
-            <section class="project-section">
-                <h3 class="section-title">Compétences travaillées</h3>
-                <div class="section-content">
-                    <p><strong>Techniques :</strong></p>
-                    <div class="competency-list">
-                        <span class="competency-tag technical">Java – POO</span>
-                        <span class="competency-tag technical">UML (diagramme de classes)</span>
-                        <span class="competency-tag technical">Gestion de collections</span>
-                        <span class="competency-tag technical">Tests unitaires (JUnit)</span>
-                        <span class="competency-tag technical">Git / GitLab</span>
-                    </div>
-
-                    <p style="margin-top:18px;"><strong>Humaines :</strong></p>
-                    <div class="competency-list">
-                        <span class="competency-tag human">Travail en équipe</span>
-                        <span class="competency-tag human">Organisation du travail</span>
-                        <span class="competency-tag human">Communication technique</span>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contribution -->
-            <section class="project-section">
-                <h3 class="section-title">Ma contribution personnelle</h3>
-                <div class="section-content">
-                    <ul>
-                        <li>Conception de la structure des classes principales et du diagramme UML.</li>
-                        <li>Implémentation des classes de gestion des decks et du moteur de combat.</li>
-                        <li>Écriture d’une partie des tests JUnit et débogage des cas limites.</li>
-                        <li>Participation à la rédaction de la documentation technique.</li>
-                    </ul>
+                    <p class="paragraph-spaced">
+                        Soutenance en juin 2025 ✓ | Équipe de 3 | Évaluation sur conception, implémentation et présentation
+                    </p>
                 </div>
             </section>
         </div>
@@ -114,7 +187,7 @@
 
     <div class="nav-buttons">
         <a href="realisations.html" class="btn btn-secondary">Retour aux réalisations</a>
-        <a href="index.html" class="btn btn-primary">Retour à l’accueil</a>
+        <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
     </div>
 </div>
 </body>

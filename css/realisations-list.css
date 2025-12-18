@@ -1,0 +1,66 @@
+/* ============================================================
+   PAGE RÉALISATIONS – LISTE DE PROJETS
+   ============================================================ */
+
+.portfolio-list-container {
+    padding: 40px 20px;
+    max-width: 1000px;
+}
+
+.portfolio-header {
+    margin-bottom: 40px;
+    text-align: center;
+    border-bottom: 3px solid var(--color-primary);
+    padding-bottom: 20px;
+}
+
+.portfolio-title {
+    font-size: 2.3em;
+    color: var(--color-primary);
+}
+
+.portfolio-intro {
+    color: var(--color-text-light);
+    max-width: 600px;
+    margin: 10px auto 0;
+}
+
+/* Grille 1 colonne pour la liste */
+.projects-grid-single {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-bottom: 0;
+}
+
+/* Sous-titre des cards */
+.project-subtitle {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* Tags techno avec marge basse */
+.tech-tags-spaced {
+    margin-bottom: 15px;
+}
+
+/* Navigation bas de page */
+.nav-buttons-spaced {
+    margin-top: 30px;
+    border-top: 1px solid var(--color-border);
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .portfolio-list-container {
+        padding: 30px 20px;
+        max-width: 100%;
+    }
+
+    .nav-buttons-spaced {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

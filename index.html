@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Nathan Duhaut - Portfolio Développeur</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/project-pages.css"> <!-- si tu utilises certaines classes, sinon optionnel -->
+    <link rel="stylesheet" href="css/home.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
+    <link rel="icon" type="image/png" href="N.png">
 </head>
 <body>
 <!-- Navigation -->
 <nav>
-    <div class="container" style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0;">
+    <div class="container nav-inner">
         <a href="#" class="logo">Nathan DUHAUT</a>
         <ul>
             <li><a href="#about">À propos</a></li>
@@ -77,7 +80,7 @@
 <!-- Skills Section -->
 <section class="projects" id="skills">
     <div class="container">
-        <h2 class="section-title">Compétences Techniques</h2>
+        <h2 class="section-title-main">Compétences Techniques</h2>
 
         <!-- Développement -->
         <h3 class="category-title">Développement</h3>
@@ -112,17 +115,16 @@
     </div>
 </section>
 
-
 <!-- Projects Preview Section -->
 <section class="projects" id="projects">
     <div class="container">
-        <h2 class="section-title">Projets Phares</h2>
+        <h2 class="section-title-main">Projets Phares</h2>
 
         <div class="projects-grid">
             <div class="project-card">
                 <div class="project-header">
                     <h3>Jeu Pokémon TCG</h3>
-                    <p style="font-size: 0.9em; opacity: 0.9;">Projet académique BUT1</p>
+                    <p class="project-subtitle">Projet académique BUT1</p>
                 </div>
                 <div class="project-body">
                     <p class="project-desc">Implémentation complète d'un jeu de cartes à collectionner en Java respectant les principes POO. Architecture MVC avec gestion des decks, batailles et sérialisation JSON.</p>
@@ -138,7 +140,7 @@
             <div class="project-card">
                 <div class="project-header">
                     <h3>SAE Bases de Données</h3>
-                    <p style="font-size: 0.9em; opacity: 0.9;">Projet interdisciplinaire BUT1/2</p>
+                    <p class="project-subtitle">Projet interdisciplinaire BUT1/2</p>
                 </div>
                 <div class="project-body">
                     <p class="project-desc">Conception d'une base de données complète pour gérer cinémas, films et réservations. Modélisation E/A, normalisation 3FN, requêtes SQL complexes et interface web PHP.</p>
@@ -153,10 +155,10 @@
         </div>
 
         <div class="projects-cta">
-            <p style="font-size: 1.1em; color: var(--color-text-light); margin-bottom: 20px;">
+            <p class="projects-cta-text">
                 Découvrez le détail complet de mes réalisations, apprentissages et contributions personnelles
             </p>
-            <a href="realisations.html" class="btn btn-primary" style="font-size: 1.05em;">Consulter les Réalisations Détaillées</a>
+            <a href="realisations.html" class="btn btn-primary projects-cta-button">Consulter les Réalisations Détaillées</a>
         </div>
     </div>
 </section>
@@ -164,25 +166,25 @@
 <!-- CV Section -->
 <section class="cv">
     <div class="container">
-        <h2 class="section-title">Mon CV</h2>
-        <p style="text-align: center; color: var(--color-text-light); margin-bottom: 25px;">
+        <h2 class="section-title-main">Mon CV</h2>
+        <p class="cv-intro">
             Aperçu de mon CV (version PDF intégrée) avec possibilité de l’ouvrir dans un nouvel onglet ou de le télécharger.
         </p>
 
-        <div style="max-width: 900px; margin: 0 auto 25px; border: 1px solid var(--color-border); box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <div class="cv-frame">
             <object
                     data="docs/NATHAN_DUHAUT_CV.pdf#view=FitH"
                     type="application/pdf"
                     width="100%"
                     height="600px">
-                <p style="padding: 20px; text-align: center; color: var(--color-text-light);">
+                <p class="cv-fallback">
                     Votre navigateur ne peut pas afficher l’aperçu PDF.
                     <a href="docs/NATHAN_DUHAUT_CV.pdf" target="_blank">Ouvrir le CV dans un nouvel onglet</a>.
                 </p>
             </object>
         </div>
 
-        <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <div class="cv-buttons">
             <a href="docs/NATHAN_DUHAUT_CV.pdf" target="_blank" class="btn btn-primary">Ouvrir le CV en PDF</a>
             <a href="docs/NATHAN_DUHAUT_CV.pdf" download class="btn btn-secondary">Télécharger le CV</a>
         </div>
@@ -222,25 +224,22 @@
                 <i class="fa-solid fa-envelope"></i>&nbsp;Envoyer un Email
             </a>
             <a href="https://github.com/Ndht30/" target="_blank"
-               class="btn btn-secondary"
-               style="background: var(--color-primary); color: white; border-color: var(--color-primary);">
+               class="btn btn-secondary btn-github">
                 <i class="fa-brands fa-github"></i>&nbsp;GitHub
             </a>
             <a href="https://www.linkedin.com/in/nathan-duhaut-6589b8327/" target="_blank"
-               class="btn btn-secondary"
-               style="background: #0d66c2; color: white; border-color: #0d66c2;">
+               class="btn btn-secondary btn-linkedin">
                 <i class="fa-brands fa-linkedin"></i>&nbsp;LinkedIn
             </a>
         </div>
     </div>
 </section>
 
-
 <!-- Footer -->
 <footer>
     <div class="container">
         <p>&copy; 2025 Nathan DUHAUT - Tous droits réservés</p>
-        <p style="font-size: 0.9em; opacity: 0.8;">Étudiant en BUT Informatique à Montpellier</p>
+        <p class="footer-subtext">Étudiant en BUT Informatique à Montpellier</p>
     </div>
 </footer>
 

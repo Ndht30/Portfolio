@@ -61,3 +61,127 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+// LIGHTBOX + NAVIGATION SUR LES IMAGES DU CAROUSEL
+document.addEventListener('DOMContentLoaded', function () {
+    const carouselImages = Array.from(document.querySelectorAll('.carousel-slide img'));
+    const lightbox = document.getElementById('img-lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const btnPrev = document.querySelector('.lightbox-prev');
+    const btnNext = document.querySelector('.lightbox-next');
+    const backdrop = document.querySelector('.lightbox-backdrop');
+
+    if (!carouselImages.length || !lightbox || !lightboxImg) return;
+
+    let currentIndex = 0;
+
+    function openLightbox(index) {
+        currentIndex = index;
+        lightboxImg.src = carouselImages[currentIndex].src;
+        lightbox.style.display = 'flex';
+        document.body.style.overflow = 'hidden'; // bloque le scroll
+    }
+
+    function closeLightbox() {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+        document.body.style.overflow = ''; // réactive le scroll
+    }
+
+    function showPrev() {
+        if (currentIndex > 0) {
+            currentIndex--;
+        } else {
+            currentIndex = carouselImages.length - 1;
+        }
+        lightboxImg.src = carouselImages[currentIndex].src;
+    }
+
+    function showNext() {
+        if (currentIndex < carouselImages.length - 1) {
+            currentIndex++;
+        } else {
+            currentIndex = 0;
+        }
+        lightboxImg.src = carouselImages[currentIndex].src;
+    }
+
+    // OUVERTURE : clic sur image slider
+    carouselImages.forEach((img, index) => {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', () => openLightbox(index));
+    });
+
+    // NAVIGATION : boutons prev/next
+    btnPrev?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showPrev();
+    });
+
+    btnNext?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        showNext();
+    });
+
+    // FERMETURE :
+    // 1. Clic sur backdrop
+    backdrop?.addEventListener('click', closeLightbox);
+
+    // 2. Clic sur l'image ✅ NOUVEAU
+    lightboxImg.addEventListener('click', closeLightbox);
+
+    // 3. Touche Échap
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+            closeLightbox();
+        }
+    });
+});
+
+// ANIMATION COMPTEURS STATS
+function animateStats() {
+    const stats = document.querySelectorAll('.stat-number');
+
+    stats.forEach(stat => {
+        const finalValue = parseInt(stat.textContent);
+        const duration = 2000; // 2 secondes
+        let startTime = null;
+
+        function updateCounter(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const progress = Math.min((timestamp - startTime) / duration, 1);
+
+            const currentValue = Math.floor(finalValue * easeOutQuart(progress));
+            stat.textContent = currentValue + '+';
+
+            if (progress < 1) {
+                requestAnimationFrame(updateCounter);
+            }
+        }
+
+        requestAnimationFrame(updateCounter);
+    });
+}
+
+function easeOutQuart(t) {
+    return 1 - (--t) * t * t * t;
+}
+
+// Observer pour déclencher l'animation au scroll
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.closest('.stat')?.classList.add('animate');
+            animateStats();
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold: 0.3,
+    rootMargin: '0px 0px -100px 0px'
+});
+
+// Appliquer à toutes les stats
+document.querySelectorAll('.stat').forEach(stat => {
+    statsObserver.observe(stat);
+});

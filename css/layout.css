@@ -125,6 +125,7 @@ nav a:hover {
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 12px;
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .skill-tag {
@@ -186,6 +187,12 @@ nav a:hover {
 .skill-card p {
     color: var(--color-text-light);
     font-size: 0.95em;
+}
+
+.about .skills-grid {
+    display: flex;
+    flex-direction: column;  /* empile les cartes en colonne */
+    gap: 16px;               /* espace entre les cartes */
 }
 
 /* ============================================================

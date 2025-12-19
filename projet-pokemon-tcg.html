@@ -7,13 +7,15 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/project-pages.css">
+    <script src="script.js"></script>
 </head>
 <body>
 <div class="container project-container">
     <header class="header project-header-main">
         <h1 class="project-title">Pokémon TCG – Interface Graphique JavaFX</h1>
         <p class="project-intro">
-            Projet académique du 2ème semestre de 1ère année de BUT Informatique (SAE S2.01 Phase 2), centré sur le développement d'une interface graphique moderne avec JavaFX et les pattern de conception.
+            Projet académique réalisé au 2ème semestre de 1ère année de BUT Informatique (SAE S2.01 Phase 2).
+            Il s’agit de concevoir et développer une interface graphique complète en JavaFX pour un jeu de cartes à collectionner inspiré de Pokémon TCG, en appliquant les principes de conception orientée objet et les patrons de conception.
         </p>
     </header>
 
@@ -22,163 +24,195 @@
             <h3>Détails du projet</h3>
             <div class="project-meta">
                 <div class="meta-item">
-                    <span class="meta-label">Contexte :</span><span>SAE S2.01 Phase 2 – BUT1 Informatique</span>
+                    <span class="meta-label">Contexte : </span><span>SAE S2.01 Phase 2 – BUT1 Informatique</span>
                 </div>
                 <div class="meta-item">
-                    <span class="meta-label">Période :</span><span>21 mai – 13 juin 2025</span>
+                    <span class="meta-label">Période : </span><span>21 mai – 13 juin 2025</span>
                 </div>
                 <div class="meta-item">
-                    <span class="meta-label">Format :</span><span>Travail en équipe (2–3 personnes)</span>
+                    <span class="meta-label">Format : </span><span>Travail en équipe (2–3 personnes)</span>
                 </div>
             </div>
         </div>
 
         <div class="project-body">
-            <!-- Contexte - Résumé + Image -->
+            <!-- Le Projet -->
             <section class="project-section">
-                <h3 class="section-title">🎮 Le Projet</h3>
+                <h3 class="section-title"> Le Projet</h3>
                 <div class="section-grid-two">
                     <div class="section-content">
                         <p>
-                            Ce projet universitaire constitue la Phase 2 d'une SAE (Situation
-                            d'Apprentissage et Évaluation) visant à développer une interface
-                            graphique JavaFX complète pour un jeu de cartes à collectionner inspiré
-                            de Pokémon TCG. Après avoir implémenté la mécanique du jeu en Phase 1,
-                            l'objectif ici est de créer une IHM intuitive et réactive.
+                            Ce projet consiste à transformer un moteur de jeu déjà existant (la mécanique du jeu) en une application graphique agréable à utiliser.
+                            L’objectif est de proposer une interface claire, fluide et compréhensible pour un joueur qui découvre le jeu.
                         </p>
                         <p class="paragraph-muted">
-                            Contraintes principales : la logique du jeu est fournie en tant que
-                            module encapsulé et immuable. Le véritable défi académique réside dans
-                            l'isolement de l'interface via le pattern Façade, la mise en place de
-                            bindings réactifs et la gestion efficace des événements utilisateur en
-                            JavaFX. Cela demande une bonne compréhension de l'architecture logicielle
-                            et du design orienté objet.
+                            La logique du jeu nous est fournie comme un « bloc » que nous n’avons pas le droit de modifier.
+                            Le travail demandé est donc de créer une interface indépendante de cette logique, de bien organiser le code et de gérer toutes les interactions entre l’utilisateur et le jeu (clics, choix de cartes, affichage des informations).
                         </p>
                     </div>
-                    <div class="screenshot-placeholder">
-                        <p class="screenshot-text">
-                            📸 Insérer image de gameplay ici<br/>
-                            <code>ressources/gameplay_1.png</code>
-                        </p>
+                    <div class="carousel" role="region" aria-roledescription="carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide" aria-roledescription="slide">
+                                <img src="img/ptcg1.png" alt="Pokemon TCG - Capture 1">
+                            </div>
+                            <div class="carousel-slide" aria-roledescription="slide">
+                                <img src="img/ptcg2.png" alt="Pokemon TCG - Capture 2">
+                            </div>
+                        </div>
+
+                        <button class="carousel-btn prev" aria-label="Image précédente">&lt;</button>
+                        <button class="carousel-btn next" aria-label="Image suivante">&gt;</button>
                     </div>
                 </div>
             </section>
 
-            <!-- Architecture - Tableau simplifié -->
+            <!-- Architecture -->
             <section class="project-section">
-                <h3 class="section-title">🏗️ Architecture</h3>
+                <h3 class="section-title"> Architecture</h3>
                 <div class="section-content">
                     <p class="paragraph-spaced">
-                        Trois couches modulaires isolées par des interfaces Façades :
+                        L’application est organisée en trois couches bien séparées, ce qui facilite la lisibilité, la maintenance et l’évolution du projet.
                     </p>
 
                     <div class="architecture-box">
                         <table class="architecture-table">
                             <tr>
                                 <td>Couche</td>
-                                <td>Contenu</td>
-                                <td>État</td>
+                                <td>Rôle</td>
+                                <td>Particularité</td>
                             </tr>
                             <tr>
                                 <td><code>mécanique</code></td>
-                                <td>Logique du jeu (encapsulée)</td>
-                                <td><span class="badge badge-accent">Read-only</span></td>
+                                <td>Contient toutes les règles du jeu et la gestion des parties.</td>
+                                <td><span class="badge badge-accent">Non modifiable (read-only)</span></td>
                             </tr>
                             <tr>
-                                <td><code>Interfaces</code></td>
-                                <td>IJeu, IJoueur, IPokemon, ICarte</td>
-                                <td><span class="badge badge-success">Façades</span></td>
+                                <td><code>interfaces</code></td>
+                                <td>Fournit des contrats (interfaces) pour communiquer avec la mécanique de jeu.</td>
+                                <td><span class="badge badge-success">Patron Façade</span></td>
                             </tr>
                             <tr>
                                 <td><code>vues</code></td>
-                                <td>Classes Vue + FXML</td>
-                                <td><span class="badge badge-info">À développer</span></td>
+                                <td>Regroupe les écrans, les contrôleurs et les fichiers FXML visibles par l’utilisateur.</td>
+                                <td><span class="badge badge-info">Interface à développer</span></td>
                             </tr>
                         </table>
                     </div>
                 </div>
             </section>
 
-            <!-- Composants - Cards compacts -->
+            <!-- Composants IHM -->
             <section class="project-section">
-                <h3 class="section-title">🖥️ Composants IHM</h3>
+                <h3 class="section-title">🖥️ Composants de l’interface</h3>
                 <div class="ihm-grid">
                     <div class="ihm-card ihm-card-main">
                         <h4>VueDuJeu</h4>
-                        <p>Vue principale intégrant tous les composants</p>
+                        <p>Écran principal qui rassemble l’ensemble des zones de jeu (joueur, adversaire, pioche, zone de combat).</p>
                     </div>
                     <div class="ihm-card ihm-card-accent">
                         <h4>VueJoueurActif</h4>
-                        <p>Main, deck, banc Pokémon</p>
+                        <p>Affiche la main du joueur, son deck et son banc de Pokémon de façon lisible et structurée.</p>
                     </div>
                     <div class="ihm-card ihm-card-success">
                         <h4>VuePokemon</h4>
-                        <p>PV, attaques, talents</p>
+                        <p>Présente les points de vie, les attaques et les capacités d’un Pokémon de manière visuelle.</p>
                     </div>
                     <div class="ihm-card ihm-card-alt">
                         <h4>VueAdversaire</h4>
-                        <p>Informations masquées</p>
+                        <p>Montre les informations utiles sur l’adversaire tout en gardant certaines données cachées pour préserver le jeu.</p>
                     </div>
                 </div>
             </section>
 
-            <!-- Points clés - Infographie simple -->
+            <!-- Compétences mobilisées -->
             <section class="project-section">
-                <h3 class="section-title">⚡ Points Clés</h3>
+                <h3 class="section-title">⚡ Compétences mobilisées</h3>
                 <div class="section-grid-two">
                     <div class="highlight-block highlight-primary">
-                        <h4>Concepts Appliqués</h4>
+                        <h4>Compétences techniques (savoir-faire)</h4>
                         <ul>
-                            <li>Pattern Façade</li>
-                            <li>MVC + FXML</li>
-                            <li>Bindings JavaFX</li>
-                            <li>Event Handling</li>
+                            <li>Concevoir et développer une interface graphique en JavaFX en respectant une architecture modulaire.</li>
+                            <li>Appliquer le patron de conception Façade pour séparer la logique métier de l’interface utilisateur.</li>
+                            <li>Mettre en œuvre le modèle MVC avec FXML, gérer les événements et les bindings pour synchroniser l’affichage avec l’état du jeu.</li>
+                            <li>Utiliser Git et GitLab pour versionner le code et travailler à plusieurs sur le même projet.</li>
                         </ul>
                     </div>
                     <div class="highlight-block highlight-accent">
-                        <h4>Technologies</h4>
+                        <h4>Technologies utilisées</h4>
                         <ul>
-                            <li>Java 11+ & JavaFX</li>
-                            <li>FXML / CSS</li>
-                            <li>Git & GitLab</li>
-                            <li>Composition UI</li>
+                            <li>Java 11+ et JavaFX pour le développement de l’interface.</li>
+                            <li>FXML et CSS pour structurer et styliser les écrans.</li>
+                            <li>Git & GitLab pour la gestion de versions et la collaboration.</li>
+                            <li>Outils IHM pour la composition et l’agencement des éléments visuels.</li>
                         </ul>
                     </div>
                 </div>
             </section>
 
-            <!-- Ma contribution - Résumé compact -->
+            <!-- Ma contribution détaillée -->
             <section class="project-section">
-                <h3 class="section-title">👨‍💻 Ma Contribution</h3>
+                <h3 class="section-title">👨‍💻 Ma contribution</h3>
                 <div class="section-content">
                     <div class="contrib-box">
                         <div class="contrib-item">
-                            <p class="contrib-title">Implémentation</p>
-                            <p class="contrib-text">VueDuJeu, VuePokemon, système de bindings</p>
+                            <p class="contrib-title">Ce que j’ai réalisé</p>
+                            <p class="contrib-text">
+                                Développement de la VueDuJeu et de la VuePokemon, mise en place des bindings entre l’état du jeu et les éléments graphiques,
+                                gestion des mises à jour en temps réel (points de vie, cartes jouées, actions du joueur).
+                            </p>
                         </div>
                         <div class="contrib-item">
-                            <p class="contrib-title">Architecture</p>
-                            <p class="contrib-text">Gestion des références, listeners d'état</p>
+                            <p class="contrib-title">Ce que j’ai mis en œuvre</p>
+                            <p class="contrib-text">
+                                Conception de l’architecture de l’interface en lien avec les interfaces fournies, gestion des références aux objets du modèle,
+                                création et paramétrage des listeners pour réagir aux changements d’état du jeu.
+                            </p>
                         </div>
                         <div class="contrib-item">
-                            <p class="contrib-title">UX/UI</p>
-                            <p class="contrib-text">Stylisation CSS, responsive design</p>
+                            <p class="contrib-title">UX / UI</p>
+                            <p class="contrib-text">
+                                Travail sur la lisibilité de l’interface (organisation des zones de jeu, cohérence des couleurs),
+                                stylisation CSS et adaptation de l’affichage pour différents formats d’écran afin d’améliorer le confort d’utilisation.
+                            </p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <!-- Défis et Bilan -->
+            <!-- Savoir-être et travail en équipe -->
             <section class="project-section">
-                <h3 class="section-title">🚀 Résumé</h3>
+                <h3 class="section-title">🤝 Savoir-être développés</h3>
+                <div class="section-content">
+                    <ul>
+                        <li>Travail en équipe : répartition des tâches, entraide sur les problèmes techniques et coordination des livrables.</li>
+                        <li>Communication : explication de choix techniques à des personnes non spécialistes et prise en compte des retours du groupe.</li>
+                        <li>Organisation : gestion du planning sur plusieurs semaines, respect des délais et préparation de la soutenance orale.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Acquis et missions -->
+            <section class="project-section">
+                <h3 class="section-title"> Acquis et missions</h3>
                 <div class="section-content">
                     <p>
-                        Projet pivotal dans ma formation : isoler une interface d'une logique complexe via des contrats (interfaces),
-                        puis synchroniser l'IHM avec un modèle réactif. Le pattern Façade a consolidé ma compréhension de
-                        l'encapsulation et des architectures modulaires.
+                        <strong>Acquis principaux :</strong> savoir concevoir une application avec interface graphique à partir d’un moteur existant,
+                        structurer le code en couches, et mettre en place une interface réactive et robuste.
                     </p>
-                    <p class="paragraph-spaced">
-                        Soutenance en juin 2025 ✓ | Équipe de 3 | Évaluation sur conception, implémentation et présentation
+                    <p>
+                        <strong>Missions réalisées :</strong> analyse du besoin, conception de l’interface, développement des vues et contrôleurs, intégration avec la logique du jeu,
+                        tests fonctionnels, préparation et présentation de la soutenance de projet.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Résumé -->
+            <section class="project-section">
+                <h3 class="section-title"> Résumé</h3>
+                <div class="section-content">
+                    <p>
+                        Ce projet a été un moment clé de ma formation, car il m’a permis de passer d’un simple moteur de jeu à une application complète, utilisable par un joueur.
+                        Il m’a aidé à consolider mes compétences en développement d’interface graphique, en architecture logicielle et en travail en équipe.
                     </p>
                 </div>
             </section>
@@ -190,5 +224,14 @@
         <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
     </div>
 </div>
+<div class="lightbox" id="img-lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-btn lightbox-prev" aria-label="Image précédente">‹</button>
+        <img id="lightbox-img" src="" alt="Aperçu de l'image">
+        <button class="lightbox-btn lightbox-next" aria-label="Image suivante">›</button>
+    </div>
+</div>
+
 </body>
 </html>

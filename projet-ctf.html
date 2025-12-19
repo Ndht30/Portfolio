@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SAE CTF 3.01 – Opération SNOW BEAR</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="container project-container">
+    <header class="header project-header-main">
+        <h1 class="project-title">SAE CTF 3.01 – Opération SNOW BEAR</h1>
+        <p class="project-intro">
+            Projet académique réalisé en 2ème année de BUT Informatique (SAE S3.01).
+            Conception et développement collectifs d'une plateforme Capture The Flag sur le thème militaire,
+            avec 26 défis en cybersécurité. Mise en place d'une organisation Agile et création de défis innovants en Forensics, OSINT, Reverse Engineering et Stéganographie.
+        </p>
+    </header>
+
+    <article class="project-card">
+        <div class="project-header">
+            <h3>Détails du projet</h3>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Contexte :</span><span>SAE S3.01 – Conception de défis cybersécurité</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Période :</span><span>Semestre 3 (2024-2025)</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Format :</span><span>Travail en équipe Agile (4 personnes)</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Plateforme :</span><span>CTFd • 26 défis créés</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <!-- Le Projet -->
+            <section class="project-section">
+                <h3 class="section-title">🎖️ Le Projet</h3>
+                <div class="section-grid-two">
+                    <div class="section-content">
+                        <p>
+                            Cette SAE consiste à concevoir une plateforme Capture The Flag (CTF) complète dans un environnement théâtral immersif.
+                            Un CTF est une compétition de cybersécurité où les participants résolvent des énigmes et exploitent des vulnérabilités pour extraire des « flags » (codes secrets).
+                        </p>
+                        <p class="paragraph-muted">
+                            Le thème militaire retenu – « Opération SNOW BEAR » – plonge les participants dans un scénario d'enquête où ils incarnent des analystes CIA chargés de reconstituer la trajectoire d'un convoi disparu.
+                            La plateforme CTFd, déployée sur serveur, héberge 26 défis répartis en 6 catégories : Cryptographie, Malware Analysis, Secure Code Review, RF & IoT, Reverse Engineering et Web Exploitation.
+                        </p>
+                    </div>
+                    <div class="carousel" role="region" aria-roledescription="carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide" aria-roledescription="slide">
+                                <img src="img/ctf_dashboard.png" alt="CTF Dashboard - Capture 1">
+                            </div>
+                            <div class="carousel-slide" aria-roledescription="slide">
+                                <img src="img/ctf_challenges.png" alt="CTF Challenges - Capture 2">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" aria-label="Image précédente">&lt;</button>
+                        <button class="carousel-btn next" aria-label="Image suivante">&gt;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Méthodologie Agile -->
+            <section class="project-section">
+                <h3 class="section-title">🏃 Méthodologie Agile</h3>
+                <div class="section-content">
+                    <p class="paragraph-spaced">
+                        L'équipe de 4 personnes s'est organisée selon les principes Agile avec une structure définie pour chaque sprint.
+                    </p>
+                    <div class="architecture-box">
+                        <table class="architecture-table">
+                            <tr>
+                                <td>Rôle</td>
+                                <td>Responsabilités</td>
+                                <td>Répartition</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Product Owner</strong></td>
+                                <td>Définir les priorités, valider les défis, s'interfacer avec le client.</td>
+                                <td>1 personne (fixe)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Scrum Master</strong></td>
+                                <td>Animer les cérémonies Agile, lever les blocages, faciliter la collaboration.</td>
+                                <td>Rotation hebdomadaire (<strong>j'ai été SM 2 sprints</strong>)</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Développeurs</strong></td>
+                                <td>Concevoir, développer et tester les défis. Gérer l'infrastructure CTFd.</td>
+                                <td>4 personnes (incluant PO et SM)</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <p class="paragraph-spaced" style="margin-top: 16px;">
+                        <strong>Outils :</strong> Trello pour la gestion des tâches par sprint, réunions de planification hebdomadaires,
+                        démonstrations des défis, retrospectives pour améliorer le processus.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Catégories de Défis -->
+            <section class="project-section">
+                <h3 class="section-title">🔐 Catégories de Défis</h3>
+                <div class="ihm-grid">
+                    <div class="ihm-card ihm-card-main">
+                        <h4>Cryptographie</h4>
+                        <p>Décryptage, cassage de chiffres et analyse cryptographique militaire.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-accent">
+                        <h4>Malware Analysis</h4>
+                        <p>Dissection de code hostile et isolation de charges utiles.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-success">
+                        <h4>Secure Code Review</h4>
+                        <p>Audit de code source pour bugs mémoire et injections SQL.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-alt">
+                        <h4>RF & IoT</h4>
+                        <p>Interception de signaux RF/Bluetooth/Zigbee.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-main">
+                        <h4>Reverse Engineering</h4>
+                        <p>Désassemblage de binaires et exposition de portes dérobées.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-accent">
+                        <h4>Web Exploitation</h4>
+                        <p>Exploitation XSS, CSRF, SQLi sur applications web.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ma Contribution -->
+            <section class="project-section">
+                <h3 class="section-title">👨‍💻 Ma Contribution</h3>
+                <div class="section-content">
+                    <div class="contrib-box">
+                        <div class="contrib-item">
+                            <p class="contrib-title">Défis Forensics</p>
+                            <p class="contrib-text">
+                                Conception de 4 défis : extraction de métadonnées, récupération de fichiers supprimés,
+                                analyse de logs système et reconstruction de timeline d'intrusion.
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Défis OSINT</p>
+                            <p class="contrib-text">
+                                Création de 3 défis : recherche de sociétés écrans, géolocalisation,
+                                analyse de présence digitale.
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Reverse Engineering</p>
+                            <p class="contrib-text">
+                                3 défis RE : binaires C, obfuscation de code, extraction de secrets compilés.
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Stéganographie</p>
+                            <p class="contrib-text">
+                                2 défis : dissimulation dans images/audio, techniques classiques et modernes.
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Scrum Master</p>
+                            <p class="contrib-text">
+                                Animation de 2 sprints : cérémonies Agile, gestion de charge, levée de blocages.
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Infrastructure</p>
+                            <p class="contrib-text">
+                                Configuration CTFd, gestion permissions, validation flags, monitoring plateforme.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compétences Mobilisées -->
+            <section class="project-section">
+                <h3 class="section-title">⚡ Compétences mobilisées</h3>
+                <div class="section-grid-two">
+                    <div class="highlight-block highlight-primary">
+                        <h4>Compétences techniques</h4>
+                        <ul>
+                            <li>Conception défis cybersécurité (Forensics, OSINT, RE, Stéganographie)</li>
+                            <li>Outils : binwalk, Ghidra, Wireshark, exiftool</li>
+                            <li>Défis web PHP et environnements de test sécurisés</li>
+                            <li>Déploiement plateforme CTFd sur serveur</li>
+                            <li>Documentation flags et write-ups</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-block highlight-accent">
+                        <h4>Technologies utilisées</h4>
+                        <ul>
+                            <li><strong>Plateforme :</strong> CTFd</li>
+                            <li><strong>Dev :</strong> PHP, Python, JavaScript</li>
+                            <li><strong>Outils :</strong> Docker, Git, Trello, Linux</li>
+                            <li><strong>Méthode :</strong> Agile/Scrum</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Savoir-être -->
+            <section class="project-section">
+                <h3 class="section-title">🤝 Savoir-être</h3>
+                <div class="section-content">
+                    <ul>
+                        <li>Collaboration Agile avec rôles définis et entraide technique</li>
+                        <li>Communication technique et feedback en rétrospectives</li>
+                        <li>Leadership en tant que Scrum Master (2 sprints)</li>
+                        <li>Agilité : adaptation aux changements et itération rapide</li>
+                        <li>Pédagogie : création défis progressifs avec hints</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Acquis -->
+            <section class="project-section">
+                <h3 class="section-title">🎯 Acquis</h3>
+                <div class="section-content">
+                    <p><strong>Principaux :</strong> concevoir épreuves cybersécurité de A à Z, maîtriser Forensics/OSINT/RE/Stégano,
+                        animer équipe Agile, déployer infrastructure CTFd.</p>
+                    <p><strong>Réalisé :</strong> 12+ défis conçus, 2 sprints animés comme SM, déploiement plateforme testée.</p>
+                </div>
+            </section>
+
+            <!-- Résumé -->
+            <section class="project-section">
+                <h3 class="section-title">🚀 Résumé</h3>
+                <div class="section-content">
+                    <p>
+                        Projet pivot consolidant compétences cybersécurité (Forensics, OSINT, RE, Stéganographie) et gestion Agile.
+                        Première expérience complète de conception d'épreuves techniques avec immersion narrative.
+                    </p>
+                </div>
+            </section>
+        </div>
+    </article>
+
+    <div class="nav-buttons">
+        <a href="realisations.html" class="btn btn-secondary">Retour aux réalisations</a>
+        <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="img-lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-btn lightbox-prev" aria-label="Précédent">‹</button>
+        <img id="lightbox-img" src="" alt="Aperçu">
+        <button class="lightbox-btn lightbox-next" aria-label="Suivant">›</button>
+    </div>
+</div>
+
+</body>
+</html>

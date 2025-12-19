@@ -1,66 +1,121 @@
 /* ============================================================
-   PAGE RÉALISATIONS – LISTE DE PROJETS
+   PAGE RÉALISATIONS – LISTE DE PROJETS (Minimaliste)
    ============================================================ */
 
 .portfolio-list-container {
-    padding: 40px 20px;
+    padding: 50px 20px;
     max-width: 1000px;
 }
 
 .portfolio-header {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
     text-align: center;
-    border-bottom: 3px solid var(--color-primary);
-    padding-bottom: 20px;
+    padding-bottom: 30px;
+    position: relative;
+}
+
+.portfolio-header::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: #1f2937;
 }
 
 .portfolio-title {
-    font-size: 2.3em;
-    color: var(--color-primary);
+    font-size: 2.4em;
+    color: #111827;
+    font-weight: 800;
+    letter-spacing: -0.02em;
 }
 
 .portfolio-intro {
-    color: var(--color-text-light);
-    max-width: 600px;
-    margin: 10px auto 0;
+    color: #6b7280;
+    max-width: 650px;
+    margin: 20px auto 0;
+    font-size: 1.1em;
+    line-height: 1.75;
 }
 
-/* Grille 1 colonne pour la liste */
+/* Grille propre */
 .projects-grid-single {
     grid-template-columns: 1fr;
-    gap: 30px;
-    margin-bottom: 0;
+    gap: 40px;
 }
 
-/* Sous-titre des cards */
+/* Cards épurées */
+.project-card {
+    background: white;
+    border-radius: 20px;
+    padding: 0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 10px 40px rgba(0,0,0,0.06);
+    border: 1px solid #f3f4f6;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card:hover {
+    box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+    border-color: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+.project-header {
+    background: #f9fafb;
+    border-bottom: 1px solid #f3f4f6;
+    padding: 30px;
+}
+
+.project-header h3 {
+    color: #111827;
+    font-size: 1.4em;
+    margin: 0 0 8px 0;
+    font-weight: 700;
+}
+
 .project-subtitle {
-    font-size: 0.9em;
-    opacity: 0.9;
+    color: #6b7280;
+    font-size: 0.95em;
+    margin: 0;
+    font-weight: 500;
 }
 
-/* Tags techno avec marge basse */
+/* Tags sobres */
 .tech-tags-spaced {
-    margin-bottom: 15px;
+    margin: 20px 0;
+    gap: 8px;
 }
 
-/* Navigation bas de page */
+.tech-tag {
+    background: #f3f4f6;
+    color: #374151;
+    border: 1px solid #e5e7eb;
+    font-size: 0.85em;
+}
+
+/* Navigation élégante */
 .nav-buttons-spaced {
-    margin-top: 30px;
-    border-top: 1px solid var(--color-border);
-    padding-top: 20px;
+    margin-top: 50px;
+    padding: 30px;
+    background: #f9fafb;
+    border-radius: 16px;
     display: flex;
     justify-content: space-between;
+    gap: 15px;
+    border: 1px solid #e5e7eb;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .portfolio-list-container {
-        padding: 30px 20px;
-        max-width: 100%;
+        padding: 30px 15px;
     }
 
     .nav-buttons-spaced {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
     }
 }

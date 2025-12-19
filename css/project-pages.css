@@ -20,8 +20,9 @@
 
 .project-intro {
     color: var(--color-text-light);
-    max-width: 650px;
+    max-width: 1200px;
     margin-top: 10px;
+    text-align: justify;
 }
 
 /* ============================================================
@@ -224,34 +225,57 @@
 }
 
 /* ============================================================
-   MA CONTRIBUTION
+   MA CONTRIBUTION - BADGES ICÔNES
    ============================================================ */
 
 .contrib-box {
-    background: var(--color-bg);
-    padding: 15px;
-    border-radius: 8px;
     display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 16px;
 }
 
 .contrib-item {
-    flex: 1;
-    min-width: 200px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: linear-gradient(135deg, var(--color-surface) 0%, rgba(255,255,255,0.5) 100%);
+    border-radius: 10px;
+    border-left: 4px solid;
+    box-shadow: 0 2px 8px rgba(15, 23, 42, 0.06);
+    transition: all 0.3s ease;
 }
 
+.contrib-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.12);
+}
+
+.contrib-item:nth-child(1) { border-left-color: var(--color-primary); }
+.contrib-item:nth-child(2) { border-left-color: var(--color-accent); }
+.contrib-item:nth-child(3) { border-left-color: var(--color-success); }
+.contrib-item:nth-child(4) { border-left-color: #10B981; }
+.contrib-item:nth-child(5) { border-left-color: #3B82F6; }
+.contrib-item:nth-child(6) { border-left-color: #F59E0B; }
+
 .contrib-title {
-    margin: 0 0 8px 0;
-    font-weight: 600;
+    margin: 0;
+    font-weight: 700;
     color: var(--color-primary);
+    font-size: 1em;
+    flex-shrink: 0;
+    min-width: 140px;
 }
 
 .contrib-text {
     margin: 0;
     color: var(--color-text-light);
-    font-size: 0.9em;
+    flex: 1;
+    line-height: 1.5;
 }
+
+
 
 /* Boutons de navigation bas de page projet */
 .nav-buttons {
@@ -272,3 +296,171 @@
         grid-template-columns: 1fr;
     }
 }
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 480px;      /* adapte si tu veux plus large */
+    border-radius: 12px;
+    overflow: hidden;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.carousel-slide img {
+    display: block;
+    width: 100%;
+    height: 260px;         /* adapte à ton design */
+    object-fit: cover;
+}
+
+/* Boutons précédent / suivant */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 32px;
+    width: 32px;
+    border-radius: 999px;
+    border: 1px solid var(--color-border, #ccc);
+    background: var(--color-surface, #fff);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    color: var(--color-text, #111);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.carousel-btn.prev {
+    left: 8px;
+}
+
+.carousel-btn.next {
+    right: 8px;
+}
+
+.carousel-btn:hover {
+    background: var(--color-accent, #e5e7eb);
+}
+
+/* LIGHTBOX - VERSION REDIMENSIONNÉE */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 20px; /* marge autour */
+}
+
+.lightbox-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85); /* fond plus sombre */
+}
+
+.lightbox-content {
+    position: relative;
+    max-width: 80vw;     /* réduit de 90vw → 80vw */
+    max-height: 80vh;    /* réduit de 90vh → 80vh */
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox-content img {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.5); /* ombre plus prononcée */
+    object-fit: contain; /* garde les proportions */
+}
+
+/* boutons prev/next dans la lightbox */
+.lightbox-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.lightbox-btn:hover {
+    background: rgba(0,0,0,0.9);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.lightbox-btn.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-btn.lightbox-next {
+    right: 20px;
+}
+
+/* fermer en cliquant sur le fond */
+.lightbox-backdrop,
+.lightbox-content img {
+    cursor: zoom-out;
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .lightbox {
+        padding: 10px;
+    }
+
+    .lightbox-content {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+
+    .lightbox-btn {
+        width: 44px;
+        height: 44px;
+        font-size: 1.2rem;
+    }
+
+    .lightbox-btn.lightbox-prev {
+        left: 10px;
+    }
+
+    .lightbox-btn.lightbox-next {
+        right: 10px;
+    }
+}
+
+
+
+

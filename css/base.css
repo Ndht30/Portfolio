@@ -20,6 +20,7 @@
     --color-gradient-end: #319795;
 
     --font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
 }
 
 /* Reset simple + box-sizing cohérent */

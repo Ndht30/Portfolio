@@ -18,3 +18,46 @@
 .projects-cta-button {
     font-size: 1.05em;
 }
+/* ============================================================
+   PROJETS PHARES - CARDS CLIQUABLES
+   ============================================================ */
+
+/* Liens cliquables sur les cards projets */
+.project-link {
+    display: block !important;
+    text-decoration: none !important;
+    color: inherit;
+    flex: 1;
+}
+
+.project-link:hover .project-card {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15) !important;
+}
+
+.project-link .project-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Cursor pointer sur toute la card */
+.project-link {
+    cursor: pointer !important;
+}
+
+/* Effet subtil sur hover des éléments internes */
+.project-link:hover .project-header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%) !important;
+}
+
+.project-link:hover .tech-tag {
+    background: var(--color-accent) !important;
+    transform: translateY(-1px);
+}
+
+/* Assure que la grille fonctionne avec les liens */
+.projects-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 30px !important;
+}
+

@@ -170,7 +170,6 @@
     </div>
 </section>
 
-
 <!-- CV Section -->
 <section class="cv">
     <div class="container">
@@ -180,39 +179,43 @@
         </p>
 
         <div class="cv-frame">
-            <object
-                    data="docs/NATHAN_DUHAUT_CV.pdf#view=FitH"
-                    type="application/pdf"
-                    width="100%"
-                    height="600px">
+            <iframe
+                    src="docs/NATHAN_DUHAUT_CV.pdf#view=FitH"
+                    title="Mon CV - Nathan Duhaut"
+                    style="width: 100%; height: 600px; border: none;">
+            </iframe>
+            <!-- Fallback DEHORS de l'iframe -->
+            <noscript>
                 <p class="cv-fallback">
-                    Votre navigateur ne peut pas afficher l'aperçu PDF.
-                    <a href="docs/NATHAN_DUHAUT_CV.pdf" target="_blank">Ouvrir le CV dans un nouvel onglet</a>.
+                    JavaScript est désactivé ou votre navigateur ne peut pas afficher le PDF.
+                    <a href="docs/NATHAN_DUHAUT_CV.pdf" target="_blank" rel="noopener">Ouvrir le CV</a>.
                 </p>
-            </object>
+            </noscript>
         </div>
 
         <div class="cv-buttons">
-            <a href="docs/NATHAN_DUHAUT_CV.pdf" target="_blank" class="btn btn-primary">Ouvrir le CV en PDF</a>
+            <a href="docs/NATHAN_DUHAUT_CV.pdf" target="_blank" rel="noopener" class="btn btn-primary">Ouvrir le CV en PDF</a>
             <a href="docs/NATHAN_DUHAUT_CV.pdf" download class="btn btn-secondary">Télécharger le CV</a>
         </div>
     </div>
 </section>
 
-<!-- Stats Section -->
-<section class="stats">
+
+<!-- Stats Section ✅ AVEC H2 -->
+<section class="stats" aria-labelledby="stats-title">
     <div class="container">
+        <h2 id="stats-title" class="sr-only">Mes statistiques</h2>
         <div class="stats-grid">
             <div class="stat">
-                <div class="stat-number">2+</div>
+                <div class="stat-number">2</div>
                 <div class="stat-label">Années en BUT Informatique</div>
             </div>
             <div class="stat">
-                <div class="stat-number">10+</div>
+                <div class="stat-number">10</div>
                 <div class="stat-label">Projets réalisés</div>
             </div>
             <div class="stat">
-                <div class="stat-number">9+</div>
+                <div class="stat-number">9</div>
                 <div class="stat-label">Domaines maîtrisés</div>
             </div>
         </div>
@@ -225,18 +228,16 @@
         <h2>Intéressé par une collaboration ?</h2>
         <p>N'hésitez pas à me contacter pour discuter de projets ou d'opportunités</p>
         <div class="contact-buttons">
-            <a href="docs/nathan_duhaut_cv.pdf" target="_blank" class="btn btn-primary">
+            <a href="docs/nathan_duhaut_cv.pdf" target="_blank" rel="noopener" class="btn btn-primary">
                 Télécharger mon CV (PDF)
             </a>
             <a href="mailto:nathan.duhaut@etu.umontpellier.fr" class="btn btn-secondary">
                 <i class="fa-solid fa-envelope"></i>&nbsp;Envoyer un Email
             </a>
-            <a href="https://github.com/Ndht30/" target="_blank"
-               class="btn btn-secondary btn-github">
+            <a href="https://github.com/Ndht30/" target="_blank" rel="noopener" class="btn btn-secondary btn-github">
                 <i class="fa-brands fa-github"></i>&nbsp;GitHub
             </a>
-            <a href="https://www.linkedin.com/in/nathan-duhaut-6589b8327/" target="_blank"
-               class="btn btn-secondary btn-linkedin">
+            <a href="https://www.linkedin.com/in/nathan-duhaut-6589b8327/" target="_blank" rel="noopener" class="btn btn-secondary btn-linkedin">
                 <i class="fa-brands fa-linkedin"></i>&nbsp;LinkedIn
             </a>
         </div>

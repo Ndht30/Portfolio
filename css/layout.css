@@ -147,21 +147,31 @@ nav a:hover {
 
 /* Variantes de couleurs de tags */
 .skill-tag.dev {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: #8B5CF6;     /* violet magenta vif */
+    color: #8B5CF6;
 }
+
 .skill-tag.tools {
-    border-color: #10B981;
+    border-color: #10B981;     /* vert émeraude (inchangé) */
     color: #10B981;
 }
+
+.skill-tag.cyber {
+    border-color: #EC4899;     /* rose néon cyberpunk */
+    color: #EC4899;
+}
+
 .skill-tag.method {
-    border-color: #3B82F6;
+    border-color: #3B82F6;     /* bleu ciel (inchangé) */
     color: #3B82F6;
 }
+
 .skill-tag.fund {
-    border-color: #F59E0B;
+    border-color: #F59E0B;     /* orange ambré (inchangé) */
     color: #F59E0B;
 }
+
+
 
 /* Grande carte de compétence */
 .skill-card {

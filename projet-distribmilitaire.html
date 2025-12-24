@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>R3.01 – Site E-commerce PHP/MySQL</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/project-pages.css">
+    <script src="script.js"></script>
+</head>
+<body>
+<div class="container project-container">
+    <header class="header project-header-main">
+        <h1 class="project-title">R3.01 – Site E-commerce PHP/MySQL</h1>
+        <p class="project-intro">
+            Projet académique de 2ème année BUT Informatique (S3). Développement complet d'un site e-commerce
+            fonctionnel avec PHP, MySQL, authentification et panier d'achat.
+            <strong><a href="https://webinfo.iutmontp.univ-montp2.fr/~duhautn/web/controleurFrontal.php"
+                       target="_blank" class="project-link" rel="noopener noreferrer">Site live ↗</a></strong>
+        </p>
+    </header>
+
+    <article class="project-card">
+        <div class="project-header">
+            <h3>Détails du projet</h3>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <span class="meta-label">Contexte : </span><span>R3.01 – Développement Web PHP</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Période : </span><span>6 octobre – 22 novembre 2025</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Format : </span><span>Travail en équipe (3 personnes)</span>
+                </div>
+                <div class="meta-item">
+                    <span class="meta-label">Déploiement : </span>
+                    <span class="deployment-link">
+                        <a href="https://webinfo.iutmontp.univ-montp2.fr/~duhautn/web/controleurFrontal.php" target="_blank" rel="noopener noreferrer" class="deployment-url">webinfo.iutmontp.univ-montp2.fr/~duhautn/web</a>
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="project-body">
+            <!-- Le Projet -->
+            <section class="project-section">
+                <h3 class="section-title">k Le Projet</h3>
+                <div class="section-grid-two">
+                    <div class="section-content">
+                        <p>
+                            Réalisation d'un site e-commerce complet from scratch, de la conception de la base
+                            de données à l'interface utilisateur. Thème : <strong>boutique de survie militaire</strong>
+                            (rations, lyophilisé, barres énergétiques, accessoires outdoor).
+                        </p>
+                        <p class="paragraph-muted">
+                            Développement full-stack avec PHP 8, MySQL 8, contrôleur frontal, authentification sécurisée
+                            et panier persistant. <strong>Site 100% fonctionnel en production</strong>.
+                        </p>
+                    </div>
+                    <div class="carousel" role="region" aria-roledescription="carousel">
+                        <div class="carousel-track">
+                            <div class="carousel-slide" aria-roledescription="slide">
+                                <img src="img/dm1.png" alt="E-commerce Survie - Page d'accueil">
+                            </div>
+                            <div class="carousel-slide" aria-roledescription="slide">
+                                <img src="img/dm2.png" alt="E-commerce Survie - Inscription">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" aria-label="Image précédente">&lt;</button>
+                        <button class="carousel-btn next" aria-label="Image suivante">&gt;</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Architecture -->
+            <section class="project-section">
+                <h3 class="section-title"> Architecture</h3>
+                <div class="section-content">
+                    <p class="paragraph-spaced">
+                        Architecture MVC complète avec contrôleur frontal centralisé pour un routage propre et maintenable.
+                    </p>
+                    <div class="architecture-box">
+                        <table class="architecture-table">
+                            <tr>
+                                <td>Couche</td>
+                                <td>Rôle</td>
+                                <td>Technologies</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Contrôleur Frontal</strong></td>
+                                <td>Routage URL, gestion actions (produit, panier, utilisateur)</td>
+                                <td>PHP 8 • GET/POST parsing</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Modèles</strong></td>
+                                <td>Business logic, accès base de données</td>
+                                <td>MySQL 8 • PDO</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Vues</strong></td>
+                                <td>Interface utilisateur responsive</td>
+                                <td>HTML5 • CSS3 • PHP templates</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Fonctionnalités -->
+            <section class="project-section">
+                <h3 class="section-title"> Fonctionnalités</h3>
+                <div class="ihm-grid">
+                    <div class="ihm-card ihm-card-main">
+                        <h4>Catalogue Produits</h4>
+                        <p>Grille responsive (8 catégories), fiches produits détaillées, recherche/filtres.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-accent">
+                        <h4>Panier Persistant</h4>
+                        <p>Ajout/suppression, calcul total TTC, persistance session.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-success">
+                        <h4>Authentification</h4>
+                        <p>Inscription/connexion sécurisée, gestion profil utilisateur.</p>
+                    </div>
+                    <div class="ihm-card ihm-card-alt">
+                        <h4>Responsive Design</h4>
+                        <p>Adapté mobile/tablette/desktop, navigation fluide.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Ma Contribution -->
+            <section class="project-section">
+                <h3 class="section-title">👨‍💻 Ma Contribution</h3>
+                <div class="section-content">
+                    <div class="contrib-box">
+                        <div class="contrib-item">
+                            <p class="contrib-title">Contrôleur frontal</p>
+                            <p class="contrib-text">
+                                Architecture centrale du site : routage URL, gestion actions (produit, catégorie, panier, utilisateur)
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Catalogue & catégories</p>
+                            <p class="contrib-text">
+                                Grille produits responsive, menu déroulant catégories (8 catégories survie), fiches produits
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Base de données</p>
+                            <p class="contrib-text">
+                                Schéma relationnel (produits, catégories, utilisateurs, paniers), 50+ produits réels
+                            </p>
+                        </div>
+                        <div class="contrib-item">
+                            <p class="contrib-title">Déploiement</p>
+                            <p class="contrib-text">
+                                Configuration webinfo, GitLab IUT, documentation, prof ajouté maintainer
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Compétences Mobilisées -->
+            <section class="project-section">
+                <h3 class="section-title"> Compétences mobilisées</h3>
+                <div class="section-grid-two">
+                    <div class="highlight-block highlight-primary">
+                        <h4>Compétences techniques</h4>
+                        <ul>
+                            <li>Architecture MVC complète avec contrôleur frontal</li>
+                            <li>Conception base de données relationnelle MySQL</li>
+                            <li>Développement full-stack PHP 8 (routage, sessions, formulaires)</li>
+                            <li>Interface responsive avec grille produits et panier</li>
+                            <li>Déploiement serveur Linux + Git workflow</li>
+                        </ul>
+                    </div>
+                    <div class="highlight-block highlight-accent">
+                        <h4>Technologies utilisées</h4>
+                        <ul>
+                            <li><strong>Backend :</strong> PHP 8, MySQL 8, PDO</li>
+                            <li><strong>Frontend :</strong> HTML5, CSS3, JavaScript vanilla</li>
+                            <li><strong>Outils :</strong> GitLab, VS Code, phpMyAdmin</li>
+                            <li><strong>Serveur :</strong> Apache webinfo.iutmontp.univ-montp2.fr</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Savoir-être -->
+            <section class="project-section">
+                <h3 class="section-title">🤝 Savoir-être</h3>
+                <div class="section-content">
+                    <ul>
+                        <li>Travail en équipe : répartition claire des tâches, code review mutuelle</li>
+                        <li>Communication : documentation complète, réunions planning/suivi</li>
+                        <li>Rigueur : tests unitaires, validation prof, respect deadlines</li>
+                        <li>Autonomie : prise en charge architecture + déploiement complet</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- GitHub + Live Demo -->
+            <section class="project-section">
+                <h3 class="section-title">🔗 Accès au projet</h3>
+                <div class="ihm-grid">
+                    <div class="ihm-card ihm-card-main">
+                        <h4>Site Live</h4>
+                        <p>
+                            <a href="https://webinfo.iutmontp.univ-montp2.fr/~duhautn/web/controleurFrontal.php"
+                               target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 8px;">
+                                Tester le site ↗
+                            </a>
+                        </p>
+                    </div>
+                    <div class="ihm-card ihm-card-accent">
+                        <h4>Source Code</h4>
+                        <p><a href="https://github.com/romainlebreton/R3.01-DeveloppementWeb" target="_blank" class="btn btn-secondary">GitHub</a></p>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </article>
+
+    <div class="nav-buttons">
+        <a href="realisations.html" class="btn btn-secondary">Retour aux réalisations</a>
+        <a href="index.html" class="btn btn-primary">Retour à l'accueil</a>
+    </div>
+</div>
+
+<!-- Lightbox -->
+<div class="lightbox" id="img-lightbox">
+    <div class="lightbox-backdrop"></div>
+    <div class="lightbox-content">
+        <button class="lightbox-btn lightbox-prev" aria-label="Image précédente">‹</button>
+        <img id="lightbox-img" src="" alt="Aperçu de l'image">
+        <button class="lightbox-btn lightbox-next" aria-label="Image suivante">›</button>
+    </div>
+</div>
+
+</body>
+</html>
